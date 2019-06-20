@@ -8,22 +8,22 @@
 
 <div class="row">
 
-  <!-- do something like this for every product -->
+  {% for product in products %}
   <div class="col-6 col-md-4 col-lg-3">
-    <a href="/products/1">
+    <a href="/products/{{product.id}}">
       <div class="card">
         <img class="card-img-top ProductList-img"
-             src="/static/1.jpeg"
-             alt="Tea cup">
+             src="{{product.image}}"
+             alt="{{product.name}}">
         <div class="card-body">
           <h5 class="card-title">
-            Tea cup
+            {{product.name}}
           </h5>
         </div>
       </div>
     </a>
   </div>
-
+  {% endfor %}
 
 </div>
 
