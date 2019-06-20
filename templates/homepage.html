@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+
+<h1 class="mb-4">Our Products</h1>
+
+<div class="row">
+
+  <!-- do something like this for every product -->
+  <div class="col-6 col-md-4 col-lg-3">
+    <a href="/products/1">
+      <div class="card">
+        <img class="card-img-top ProductList-img"
+             src="/static/1.jpeg"
+             alt="Tea cup">
+        <div class="card-body">
+          <h5 class="card-title">
+            Tea cup
+          </h5>
+        </div>
+      </div>
+    </a>
+  </div>
+
+
+</div>
+
+{% endblock %}

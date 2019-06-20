@@ -1,0 +1,6 @@
+/* in the homepage product list, make the images the same size. */
+
+.ProductList-img {
+  height: 10em;
+  object-fit: cover;
+}

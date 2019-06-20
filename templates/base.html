@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet"
+        href="https://unpkg.com/bootswatch@4/dist/pulse/bootstrap.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <title>{% block title %} title goes here {% endblock %}</title>
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-primary mb-5">
+  <a class="navbar-brand" href="/">ShoppingWorld</a>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item"><a class="nav-link" href="/cart">Cart</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  {% for category, msg in get_flashed_messages(with_categories=True) %}
+  <div class="mb-3 alert alert-{{ category }}">{{ msg }}</div>
+  {% endfor %}
+
+  {% block content %} content here {% endblock %}
+</div>
+
+</body>
+</html>
