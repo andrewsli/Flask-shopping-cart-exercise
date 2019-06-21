@@ -14,8 +14,6 @@ debug = DebugToolbarExtension(app)
 @app.route("/")
 def homepage():
     """Homepage: show list of products with link to product page."""
-    if not session:
-        session["cart"] = []
 
     all_products = Product.get_all()
     return render_template("homepage.html", products=all_products)
@@ -44,6 +42,8 @@ def add_to_cart():
     """Add product ID to session cart, redirect user to homepage with flashed
         confirmation message
     """
+    if not session:
+        session["cart"] = []
 
     product_id = request.form["product_id"]
     product_name = request.form["product_name"]
